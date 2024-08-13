@@ -1,13 +1,12 @@
-/** @type import('hardhat/config').HardhatUserConfig */
-// require("@nomicfoundation/hardhat-ethers");
 require("@nomicfoundation/hardhat-chai-matchers");
 require("@nomiclabs/hardhat-solhint");
-const dotenv = require('dotenv');
+require("@nomicfoundation/hardhat-verify");
+const dotenv = require("dotenv");
 
 dotenv.config({
-  path: './config.env',
+  path: "./config.env",
 });
-
+console.log(process.env.ETHEREUM_API_KEY);
 module.exports = {
   solidity: "0.8.19",
   networks: {
@@ -23,9 +22,11 @@ module.exports = {
 
   etherscan: {
     apiKey: {
-      polygon: process.env.POLYGON_API_KEY,
+      // polygon: process.env.POLYGON_API_KEY,
+      sepolia: process.env.ETHEREUM_API_KEY,
     },
   },
+
   sourcify: {
     // Disabled by default
     // Doesn't need an API key

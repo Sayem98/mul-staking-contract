@@ -207,7 +207,7 @@ interface IERC20 {
 }
 
 // import console.sol
-import "hardhat/console.sol";
+// import "hardhat/console.sol";
 
 contract Stakings is Ownable {
     struct Offer {
